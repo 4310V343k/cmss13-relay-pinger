@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
 
   caddy:
-    image: ghcr.io/lewsion/caddy-cloudflare:latest
+    image: caddybuilds/caddy-cloudflare:alpine
     restart: unless-stopped
     ports:
       - "1400:1400"
