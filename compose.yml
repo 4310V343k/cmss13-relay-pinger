@@ -11,6 +11,10 @@ services:
     restart: unless-stopped
     ports:
       - "1400:1400"
+    environment:
+      ACME_EMAIL: ${ACME_EMAIL}
+      WILDCARD_DOMAIN: ${WILDCARD_DOMAIN}
+      CLOUDFLARE_API_TOKEN: ${CLOUDFLARE_API_TOKEN}
     volumes:
       - caddy_data:/data
       - caddy_config:/config
