@@ -5,9 +5,7 @@ services:
     restart: unless-stopped
 
   caddy:
-    build:
-      context: caddy
-      dockerfile: Dockerfile
+    image: ghcr.io/lewsion/caddy-cloudflare:latest
     restart: unless-stopped
     ports:
       - "1400:1400"
