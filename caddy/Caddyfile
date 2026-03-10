@@ -1,0 +1,11 @@
+{
+    email {$ACME_EMAIL}
+}
+
+*.{$WILDCARD_DOMAIN}:1400 {
+    tls {
+        dns cloudflare {$CLOUDFLARE_API_TOKEN}
+    }
+
+    reverse_proxy / backend:1400
+}
