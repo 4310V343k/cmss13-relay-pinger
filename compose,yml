@@ -1,0 +1,21 @@
+services:
+  backend:
+    build:
+      context: .
+    restart: unless-stopped
+
+  caddy:
+    build:
+      context: caddy
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "1400:1400"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+
+volumes:
+  caddy_data:
+  caddy_config:
